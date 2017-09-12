@@ -8,9 +8,8 @@ Lately I've been finding most of my productive writing has been occurring in Mar
 
 To jumpstart more habitual writing, I wanted dead-simple, 0-dependency, Markdown journaling.
 
-1. As few keystrokes as possible to actually writing.
-2. Automatic backups to the iCloud storage I already pay for.
-3. I wanted: "run, start typing, close, don't worry about it being backed up."
+1. From desire to write, to actually writing, as quickly as possible.
+2. Automatic backups to the iCloud storage I already pay for so I don't have to configure or worry about anything.
 
 Upon searching around, most of the stuff in the simple Markdown journal category came with a lot of extra fluff, required Dropbox, or had a host of dependencies.
 
