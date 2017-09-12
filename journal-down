@@ -57,8 +57,9 @@ DaySuffix() {
 
 # We are using date parts for the filename as well as headers, so make sure we don't
 # hit a race condition by doing a single date call and allow for two-word days or months.
+journal_path="$HOME/Library/Mobile Documents/com~apple~CloudDocs/JournalDown"
 IFS=$'\n' read -rd '' year month day time_of_day am_pm month_name day_of_week < <(date $'+%Y\n%m\n%d\n%I:%M\n%p\n%B\n%A';printf '\0')
-journal_filename="$HOME/Library/Mobile Documents/com~apple~CloudDocs/JournalDown/$year/$month/$year-$month-$day.md"
+journal_filename="$journal_path/$year/$month/$year-$month-$day.md"
 
 # Handle arguments
 while getopts ":hor:" opt; do
@@ -90,7 +91,7 @@ while getopts ":hor:" opt; do
                 month=${date_parts[1]}
                 day=${date_parts[2]}
 
-                journal_filename="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Journal/$year/$month/$year-$month-$day.md"
+                journal_filename="$journal_path/$year/$month/$year-$month-$day.md"
                 if [[ -e "$journal_filename" ]]; then
                     /Applications/Macdown.app/Contents/SharedSupport/bin/macdown "$journal_filename"
                 else
@@ -98,8 +99,6 @@ while getopts ":hor:" opt; do
                     exit 1
                 fi
             fi
-            echo "${date_parts[0]}"
-            exit 0
             /Applications/Macdown.app/Contents/SharedSupport/bin/macdown "$journal_filename"
             exit 0
             ;;
