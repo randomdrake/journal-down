@@ -4,12 +4,12 @@
 
 ## About:
 
-Lately I've been finding most of my productive writing has been occurring in Markdown. Specifically, I enjoy using [MacDown](https://macdown.uranusjr.com). 
+Lately I've been finding most of my productive writing has been occurring in [Markdown](https://daringfireball.net/projects/markdown/syntax). Specifically, I enjoy using [MacDown](https://macdown.uranusjr.com). 
 
 To jumpstart more habitual writing, I wanted dead-simple, 0-dependency, Markdown journaling.
 
 1. From desire to write, to actually writing, as quickly as possible.
-2. Automatic backups to the iCloud storage I already pay for so I don't have to configure or worry about anything.
+2. Automatic backups to iCloud storage, so I don't have to configure or worry about anything.
 
 Upon searching around, most of the stuff in the simple Markdown journal category came with a lot of extra fluff, required Dropbox, or had a host of dependencies.
 
@@ -17,8 +17,10 @@ This is JournalDown.
 
 ## How it Works:
 
-1. When you run `journal-down` it will create a file for you in your iCloud storage like this: `/JournalDown/2017/09/2017-09-10.md`
-2. JournalDown will add a header to the file with the current date, and day of the week like: `# September 11th, 2017 - Monday`
+JournalDown is a BASH script that manages creating, timestamp-ing, and opening your journal with a cursor in a convenient location, ready to go. 
+
+1. When you run `journal-down` for the first time it will create a file for you in your iCloud storage like this: `/JournalDown/2017/09/2017-09-10.md`
+2. JournalDown will add a header to the file with the current date, and day of the week like: `# September 10th, 2017 - Monday`
 3. Additionally, JournalDown will create a subheading with the current time like: `## 08:44 PM`
 4. MacDown will open with the current file and your cursor on a new line ready to type.
 5. Simply `⌘-Q` out of MacDown when you're finished.
@@ -31,22 +33,30 @@ That is JournalDown.
 ## Requirements
 
 * macOS
-* MacDown - The Open Source Markdown editor for macOS ([https://macdown.uranusjr.com](https://macdown.uranusjr.com))
-* iCloud Storage - Default setup.
+* [MacDown](https://macdown.uranusjr.com), the Open Source Markdown editor for macOS ([https://macdown.uranusjr.com](https://macdown.uranusjr.com)).
+* iCloud Storage with a default setup.
 
 ## Installation
 
-Be sure you've installed MacDown. Copy the `journal-down` file to an accessible location like your Home Directory. Make sure the file is executable with: `chmod +x journal-down`. Run `journal-down` and start typing.
+Be sure you've installed [MacDown](https://macdown.uranusjr.com). 
+
+Copy the `journal-down` file to an accessible location like your home directory. 
+
+Make sure the file is executable with: `chmod +x journal-down`. 
+
+Run `journal-down` to start journaling like this:
+
+```
+./journal-down
+```
 
 ## Help
 
 For help using `journal-down` you can use the `-h` flag like:
 
-`journal-down -h`
-
-It will print the following:
-
 ```
+~/journal-down -h
+
 This is JournalDown.
 
 Requires:
